@@ -1,15 +1,15 @@
 
-  
-  
 
-  
+
+
+
   USE [AdventureWorks2014];
-  EXEC('create view 
+  EXEC('create view
 
-    [dbt_test__audit.testview_3e939ba92d66d46d38f8d80667233997]
-   as 
-    
-    
+    [dbt_test__audit.testview_db76332536b9345fe7ffebf9eb55f8a8]
+   as
+
+
 
 
 
@@ -26,14 +26,14 @@ where sales_order_id is null
     case when count(*) != 0
       then 'true' else 'false' end as should_error
   from (
-    select  * from 
+    select  * from
 
-    [dbt_test__audit.testview_3e939ba92d66d46d38f8d80667233997]
-  
+    [dbt_test__audit.testview_db76332536b9345fe7ffebf9eb55f8a8]
+
   ) dbt_internal_test;
 
   USE [AdventureWorks2014];
-  EXEC('drop view 
+  EXEC('drop view
 
-    [dbt_test__audit.testview_3e939ba92d66d46d38f8d80667233997]
+    [dbt_test__audit.testview_db76332536b9345fe7ffebf9eb55f8a8]
   ;')

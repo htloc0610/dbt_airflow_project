@@ -1,13 +1,13 @@
 
-  
-  
 
-  
+
+
+
   USE [AdventureWorks2014];
-  EXEC('create view 
+  EXEC('create view
 
-    [dbt_test__audit.testview_c19e2857b46aa9cc2a537e73a759a03b]
-   as 
+    [dbt_test__audit.testview_65cb4dd508677dd0785b57a6ca9cffe6]
+   as
 
 
 
@@ -35,14 +35,14 @@ from validation_errors
     case when count(*) != 0
       then 'true' else 'false' end as should_error
   from (
-    select  * from 
+    select  * from
 
-    [dbt_test__audit.testview_c19e2857b46aa9cc2a537e73a759a03b]
-  
+    [dbt_test__audit.testview_65cb4dd508677dd0785b57a6ca9cffe6]
+
   ) dbt_internal_test;
 
   USE [AdventureWorks2014];
-  EXEC('drop view 
+  EXEC('drop view
 
-    [dbt_test__audit.testview_c19e2857b46aa9cc2a537e73a759a03b]
+    [dbt_test__audit.testview_65cb4dd508677dd0785b57a6ca9cffe6]
   ;')
