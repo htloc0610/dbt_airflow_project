@@ -1,0 +1,64 @@
+[2025-11-14T16:50:44.369+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_transform.dbt_test scheduled__2025-11-14T16:45:35.634758+00:00 [queued]>
+[2025-11-14T16:50:44.375+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_transform.dbt_test scheduled__2025-11-14T16:45:35.634758+00:00 [queued]>
+[2025-11-14T16:50:44.376+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2025-11-14T16:50:44.384+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): dbt_test> on 2025-11-14 16:45:35.634758+00:00
+[2025-11-14T16:50:44.390+0000] {standard_task_runner.py:57} INFO - Started process 1793 to run task
+[2025-11-14T16:50:44.392+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dbt_transform', 'dbt_test', 'scheduled__2025-11-14T16:45:35.634758+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpfz0dg2h7']
+[2025-11-14T16:50:44.395+0000] {standard_task_runner.py:85} INFO - Job 45: Subtask dbt_test
+[2025-11-14T16:50:44.449+0000] {task_command.py:415} INFO - Running <TaskInstance: dbt_transform.dbt_test scheduled__2025-11-14T16:45:35.634758+00:00 [running]> on host 3f4da400579d
+[2025-11-14T16:50:44.509+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_transform' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-11-14T16:45:35.634758+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-14T16:45:35.634758+00:00'
+[2025-11-14T16:50:44.511+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-14T16:50:44.512+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'docker exec dbt_***_project-dbt-1 dbt test']
+[2025-11-14T16:50:44.519+0000] {subprocess.py:86} INFO - Output:
+[2025-11-14T16:50:45.449+0000] {subprocess.py:93} INFO - [0m16:50:45  Running with dbt=1.8.7
+[2025-11-14T16:50:45.702+0000] {subprocess.py:93} INFO - [0m16:50:45  Registered adapter: sqlserver=1.8.7
+[2025-11-14T16:50:46.890+0000] {subprocess.py:93} INFO - [0m16:50:46  Found 10 models, 18 data tests, 13 sources, 614 macros
+[2025-11-14T16:50:46.894+0000] {subprocess.py:93} INFO - [0m16:50:46
+[2025-11-14T16:50:47.014+0000] {subprocess.py:93} INFO - [0m16:50:47  Concurrency: 4 threads (target='dev')
+[2025-11-14T16:50:47.015+0000] {subprocess.py:93} INFO - [0m16:50:47
+[2025-11-14T16:50:47.021+0000] {subprocess.py:93} INFO - [0m16:50:47  1 of 18 START test dbt_utils_unique_combination_of_columns_brnz_sales_orders_sales_order_id__order_detail_id  [RUN]
+[2025-11-14T16:50:47.023+0000] {subprocess.py:93} INFO - [0m16:50:47  2 of 18 START test dbt_utils_unique_combination_of_columns_slvr_sales_orders_sales_order_id__order_detail_id  [RUN]
+[2025-11-14T16:50:47.024+0000] {subprocess.py:93} INFO - [0m16:50:47  3 of 18 START test not_null_brnz_sales_orders_order_detail_id .................. [RUN]
+[2025-11-14T16:50:47.025+0000] {subprocess.py:93} INFO - [0m16:50:47  4 of 18 START test not_null_brnz_sales_orders_sales_order_id ................... [RUN]
+[2025-11-14T16:50:47.187+0000] {subprocess.py:93} INFO - [0m16:50:47  4 of 18 PASS not_null_brnz_sales_orders_sales_order_id ......................... [[32mPASS[0m in 0.16s]
+[2025-11-14T16:50:47.191+0000] {subprocess.py:93} INFO - [0m16:50:47  5 of 18 START test not_null_gld_customer_metrics_customer_id ................... [RUN]
+[2025-11-14T16:50:47.247+0000] {subprocess.py:93} INFO - [0m16:50:47  3 of 18 PASS not_null_brnz_sales_orders_order_detail_id ........................ [[32mPASS[0m in 0.22s]
+[2025-11-14T16:50:47.256+0000] {subprocess.py:93} INFO - [0m16:50:47  1 of 18 PASS dbt_utils_unique_combination_of_columns_brnz_sales_orders_sales_order_id__order_detail_id  [[32mPASS[0m in 0.23s]
+[2025-11-14T16:50:47.257+0000] {subprocess.py:93} INFO - [0m16:50:47  6 of 18 START test not_null_gld_product_performance_product_id ................. [RUN]
+[2025-11-14T16:50:47.268+0000] {subprocess.py:93} INFO - [0m16:50:47  5 of 18 PASS not_null_gld_customer_metrics_customer_id ......................... [[32mPASS[0m in 0.08s]
+[2025-11-14T16:50:47.269+0000] {subprocess.py:93} INFO - [0m16:50:47  7 of 18 START test not_null_gld_sales_summary_order_date ....................... [RUN]
+[2025-11-14T16:50:47.283+0000] {subprocess.py:93} INFO - [0m16:50:47  8 of 18 START test not_null_slvr_customers_customer_id ......................... [RUN]
+[2025-11-14T16:50:47.307+0000] {subprocess.py:93} INFO - [0m16:50:47  2 of 18 PASS dbt_utils_unique_combination_of_columns_slvr_sales_orders_sales_order_id__order_detail_id  [[32mPASS[0m in 0.28s]
+[2025-11-14T16:50:47.321+0000] {subprocess.py:93} INFO - [0m16:50:47  9 of 18 START test not_null_slvr_products_list_price ........................... [RUN]
+[2025-11-14T16:50:47.375+0000] {subprocess.py:93} INFO - [0m16:50:47  6 of 18 PASS not_null_gld_product_performance_product_id ....................... [[32mPASS[0m in 0.11s]
+[2025-11-14T16:50:47.376+0000] {subprocess.py:93} INFO - [0m16:50:47  7 of 18 PASS not_null_gld_sales_summary_order_date ............................. [[32mPASS[0m in 0.10s]
+[2025-11-14T16:50:47.383+0000] {subprocess.py:93} INFO - [0m16:50:47  10 of 18 START test not_null_slvr_products_product_id .......................... [RUN]
+[2025-11-14T16:50:47.386+0000] {subprocess.py:93} INFO - [0m16:50:47  11 of 18 START test not_null_slvr_sales_orders_line_total ...................... [RUN]
+[2025-11-14T16:50:47.396+0000] {subprocess.py:93} INFO - [0m16:50:47  8 of 18 PASS not_null_slvr_customers_customer_id ............................... [[32mPASS[0m in 0.11s]
+[2025-11-14T16:50:47.418+0000] {subprocess.py:93} INFO - [0m16:50:47  12 of 18 START test not_null_slvr_sales_orders_order_detail_id ................. [RUN]
+[2025-11-14T16:50:47.447+0000] {subprocess.py:93} INFO - [0m16:50:47  9 of 18 PASS not_null_slvr_products_list_price ................................. [[32mPASS[0m in 0.12s]
+[2025-11-14T16:50:47.451+0000] {subprocess.py:93} INFO - [0m16:50:47  13 of 18 START test not_null_slvr_sales_orders_sales_order_id .................. [RUN]
+[2025-11-14T16:50:47.516+0000] {subprocess.py:93} INFO - [0m16:50:47  10 of 18 PASS not_null_slvr_products_product_id ................................ [[32mPASS[0m in 0.13s]
+[2025-11-14T16:50:47.523+0000] {subprocess.py:93} INFO - [0m16:50:47  14 of 18 START test unique_gld_customer_metrics_customer_id .................... [RUN]
+[2025-11-14T16:50:47.541+0000] {subprocess.py:93} INFO - [0m16:50:47  12 of 18 PASS not_null_slvr_sales_orders_order_detail_id ....................... [[32mPASS[0m in 0.12s]
+[2025-11-14T16:50:47.549+0000] {subprocess.py:93} INFO - [0m16:50:47  15 of 18 START test unique_gld_product_performance_product_id .................. [RUN]
+[2025-11-14T16:50:47.573+0000] {subprocess.py:93} INFO - [0m16:50:47  11 of 18 PASS not_null_slvr_sales_orders_line_total ............................ [[32mPASS[0m in 0.18s]
+[2025-11-14T16:50:47.574+0000] {subprocess.py:93} INFO - [0m16:50:47  13 of 18 PASS not_null_slvr_sales_orders_sales_order_id ........................ [[32mPASS[0m in 0.12s]
+[2025-11-14T16:50:47.588+0000] {subprocess.py:93} INFO - [0m16:50:47  16 of 18 START test unique_gld_sales_summary_order_date ........................ [RUN]
+[2025-11-14T16:50:47.589+0000] {subprocess.py:93} INFO - [0m16:50:47  17 of 18 START test unique_slvr_customers_customer_id .......................... [RUN]
+[2025-11-14T16:50:47.652+0000] {subprocess.py:93} INFO - [0m16:50:47  14 of 18 PASS unique_gld_customer_metrics_customer_id .......................... [[32mPASS[0m in 0.13s]
+[2025-11-14T16:50:47.653+0000] {subprocess.py:93} INFO - [0m16:50:47  15 of 18 PASS unique_gld_product_performance_product_id ........................ [[32mPASS[0m in 0.10s]
+[2025-11-14T16:50:47.662+0000] {subprocess.py:93} INFO - [0m16:50:47  18 of 18 START test unique_slvr_products_product_id ............................ [RUN]
+[2025-11-14T16:50:47.707+0000] {subprocess.py:93} INFO - [0m16:50:47  16 of 18 PASS unique_gld_sales_summary_order_date .............................. [[32mPASS[0m in 0.11s]
+[2025-11-14T16:50:47.711+0000] {subprocess.py:93} INFO - [0m16:50:47  17 of 18 PASS unique_slvr_customers_customer_id ................................ [[32mPASS[0m in 0.12s]
+[2025-11-14T16:50:47.744+0000] {subprocess.py:93} INFO - [0m16:50:47  18 of 18 PASS unique_slvr_products_product_id .................................. [[32mPASS[0m in 0.08s]
+[2025-11-14T16:50:47.755+0000] {subprocess.py:93} INFO - [0m16:50:47
+[2025-11-14T16:50:47.757+0000] {subprocess.py:93} INFO - [0m16:50:47  Finished running 18 data tests in 0 hours 0 minutes and 0.86 seconds (0.86s).
+[2025-11-14T16:50:47.866+0000] {subprocess.py:93} INFO - [0m16:50:47
+[2025-11-14T16:50:47.868+0000] {subprocess.py:93} INFO - [0m16:50:47  [32mCompleted successfully[0m
+[2025-11-14T16:50:47.869+0000] {subprocess.py:93} INFO - [0m16:50:47
+[2025-11-14T16:50:47.870+0000] {subprocess.py:93} INFO - [0m16:50:47  Done. PASS=18 WARN=0 ERROR=0 SKIP=0 TOTAL=18
+[2025-11-14T16:50:49.135+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-14T16:50:49.152+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=dbt_transform, task_id=dbt_test, execution_date=20251114T164535, start_date=20251114T165044, end_date=20251114T165049
+[2025-11-14T16:50:49.196+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-14T16:50:49.212+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

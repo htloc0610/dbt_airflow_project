@@ -1,0 +1,48 @@
+[2025-11-14T23:35:36.403+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_transform.dbt_run scheduled__2025-11-14T23:30:35.634758+00:00 [queued]>
+[2025-11-14T23:35:36.409+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_transform.dbt_run scheduled__2025-11-14T23:30:35.634758+00:00 [queued]>
+[2025-11-14T23:35:36.410+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2025-11-14T23:35:36.419+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): dbt_run> on 2025-11-14 23:30:35.634758+00:00
+[2025-11-14T23:35:36.423+0000] {standard_task_runner.py:57} INFO - Started process 7757 to run task
+[2025-11-14T23:35:36.426+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dbt_transform', 'dbt_run', 'scheduled__2025-11-14T23:30:35.634758+00:00', '--job-id', '206', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpbov_0kgj']
+[2025-11-14T23:35:36.429+0000] {standard_task_runner.py:85} INFO - Job 206: Subtask dbt_run
+[2025-11-14T23:35:36.485+0000] {task_command.py:415} INFO - Running <TaskInstance: dbt_transform.dbt_run scheduled__2025-11-14T23:30:35.634758+00:00 [running]> on host 3f4da400579d
+[2025-11-14T23:35:36.543+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_transform' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-11-14T23:30:35.634758+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-14T23:30:35.634758+00:00'
+[2025-11-14T23:35:36.545+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-14T23:35:36.546+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'docker exec dbt_***_project-dbt-1 dbt run']
+[2025-11-14T23:35:36.553+0000] {subprocess.py:86} INFO - Output:
+[2025-11-14T23:35:38.056+0000] {subprocess.py:93} INFO - [0m23:35:38  Running with dbt=1.8.7
+[2025-11-14T23:35:38.388+0000] {subprocess.py:93} INFO - [0m23:35:38  Registered adapter: sqlserver=1.8.7
+[2025-11-14T23:35:39.594+0000] {subprocess.py:93} INFO - [0m23:35:39  Found 10 models, 18 data tests, 13 sources, 614 macros
+[2025-11-14T23:35:39.599+0000] {subprocess.py:93} INFO - [0m23:35:39
+[2025-11-14T23:35:39.784+0000] {subprocess.py:93} INFO - [0m23:35:39  Concurrency: 4 threads (target='dev')
+[2025-11-14T23:35:39.785+0000] {subprocess.py:93} INFO - [0m23:35:39
+[2025-11-14T23:35:39.791+0000] {subprocess.py:93} INFO - [0m23:35:39  1 of 10 START sql view model bronze.brnz_customers ............................. [RUN]
+[2025-11-14T23:35:39.792+0000] {subprocess.py:93} INFO - [0m23:35:39  2 of 10 START sql view model bronze.brnz_example ............................... [RUN]
+[2025-11-14T23:35:39.793+0000] {subprocess.py:93} INFO - [0m23:35:39  3 of 10 START sql view model bronze.brnz_products .............................. [RUN]
+[2025-11-14T23:35:39.795+0000] {subprocess.py:93} INFO - [0m23:35:39  4 of 10 START sql view model bronze.brnz_sales_orders .......................... [RUN]
+[2025-11-14T23:35:40.090+0000] {subprocess.py:93} INFO - [0m23:35:40  2 of 10 OK created sql view model bronze.brnz_example .......................... [[32mOK[0m in 0.29s]
+[2025-11-14T23:35:40.093+0000] {subprocess.py:93} INFO - [0m23:35:40  1 of 10 OK created sql view model bronze.brnz_customers ........................ [[32mOK[0m in 0.29s]
+[2025-11-14T23:35:40.094+0000] {subprocess.py:93} INFO - [0m23:35:40  4 of 10 OK created sql view model bronze.brnz_sales_orders ..................... [[32mOK[0m in 0.29s]
+[2025-11-14T23:35:40.097+0000] {subprocess.py:93} INFO - [0m23:35:40  3 of 10 OK created sql view model bronze.brnz_products ......................... [[32mOK[0m in 0.29s]
+[2025-11-14T23:35:40.106+0000] {subprocess.py:93} INFO - [0m23:35:40  5 of 10 START sql table model silver.slvr_customers ............................ [RUN]
+[2025-11-14T23:35:40.107+0000] {subprocess.py:93} INFO - [0m23:35:40  6 of 10 START sql table model silver.slvr_sales_orders ......................... [RUN]
+[2025-11-14T23:35:40.108+0000] {subprocess.py:93} INFO - [0m23:35:40  7 of 10 START sql table model silver.slvr_products ............................. [RUN]
+[2025-11-14T23:35:40.354+0000] {subprocess.py:93} INFO - [0m23:35:40  7 of 10 OK created sql table model silver.slvr_products ........................ [[32mOK[0m in 0.24s]
+[2025-11-14T23:35:40.409+0000] {subprocess.py:93} INFO - [0m23:35:40  5 of 10 OK created sql table model silver.slvr_customers ....................... [[32mOK[0m in 0.30s]
+[2025-11-14T23:35:40.994+0000] {subprocess.py:93} INFO - [0m23:35:40  6 of 10 OK created sql table model silver.slvr_sales_orders .................... [[32mOK[0m in 0.88s]
+[2025-11-14T23:35:40.999+0000] {subprocess.py:93} INFO - [0m23:35:40  8 of 10 START sql table model gold.gld_customer_metrics ........................ [RUN]
+[2025-11-14T23:35:41.000+0000] {subprocess.py:93} INFO - [0m23:35:40  9 of 10 START sql table model gold.gld_product_performance ..................... [RUN]
+[2025-11-14T23:35:41.002+0000] {subprocess.py:93} INFO - [0m23:35:41  10 of 10 START sql table model gold.gld_sales_summary .......................... [RUN]
+[2025-11-14T23:35:41.560+0000] {subprocess.py:93} INFO - [0m23:35:41  10 of 10 OK created sql table model gold.gld_sales_summary ..................... [[32mOK[0m in 0.55s]
+[2025-11-14T23:35:41.637+0000] {subprocess.py:93} INFO - [0m23:35:41  8 of 10 OK created sql table model gold.gld_customer_metrics ................... [[32mOK[0m in 0.63s]
+[2025-11-14T23:35:41.760+0000] {subprocess.py:93} INFO - [0m23:35:41  9 of 10 OK created sql table model gold.gld_product_performance ................ [[32mOK[0m in 0.75s]
+[2025-11-14T23:35:41.770+0000] {subprocess.py:93} INFO - [0m23:35:41
+[2025-11-14T23:35:41.771+0000] {subprocess.py:93} INFO - [0m23:35:41  Finished running 4 view models, 6 table models in 0 hours 0 minutes and 2.17 seconds (2.17s).
+[2025-11-14T23:35:41.855+0000] {subprocess.py:93} INFO - [0m23:35:41
+[2025-11-14T23:35:41.856+0000] {subprocess.py:93} INFO - [0m23:35:41  [32mCompleted successfully[0m
+[2025-11-14T23:35:41.857+0000] {subprocess.py:93} INFO - [0m23:35:41
+[2025-11-14T23:35:41.859+0000] {subprocess.py:93} INFO - [0m23:35:41  Done. PASS=10 WARN=0 ERROR=0 SKIP=0 TOTAL=10
+[2025-11-14T23:35:43.473+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-14T23:35:43.494+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=dbt_transform, task_id=dbt_run, execution_date=20251114T233035, start_date=20251114T233536, end_date=20251114T233543
+[2025-11-14T23:35:43.544+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-11-14T23:35:43.565+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check
